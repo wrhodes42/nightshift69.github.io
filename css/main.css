@@ -1,0 +1,307 @@
+html, body {
+    color: #fff;
+    font-size: 24px;
+    line-height: 1.2;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #000;
+    text-shadow: none;
+}
+
+::selection {
+    background: #000;
+    text-shadow: none;
+}
+
+/* MARQUEE */
+
+.marquee{
+    height: 60px;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+.img-marquee{
+    height: 60px;
+    padding: 10px 0 10px 0;
+    display: inline-block;
+    z-index: 2;
+}
+
+
+/***** MAIN STUFF *****/
+
+#main-content{
+    height: calc(100% - 120px);
+    width: 100%;
+    display: block;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+
+/***** SIDE TEXT *****/
+
+.dd{
+    max-height: 100%;
+    height: 50vw;
+    width: 10vw;
+    flex-basis: 1;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.dd img{
+    height: 100%;
+    width: 10vw;
+}
+
+/***** TOTEMS *****/
+
+.totem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    height: 100%;
+    flex-basis: 1;
+    width: 17.5vw;
+}
+
+.tribal{
+    width: 100%;
+    flex-shrink: 2;
+    padding: 10px;
+    max-height: 20%;
+}
+
+@keyframes x-rotate{
+    from {transform: rotateX(0deg);}
+    to {transform: rotateX(360deg);}
+}
+
+.tribal:hover{
+    animation: x-rotate 3s linear infinite;
+    perspective: 5000;
+}
+
+@keyframes rotate{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+.circle{
+    animation: rotate 5s linear infinite;
+    width: 60%;
+    padding: 10px;
+    max-height: 20%;
+}
+
+.cup{
+    padding: 10px;
+    width: 100%;
+    max-height: 40%;
+}
+
+.cup:hover + .runneth{
+    display: block;
+}
+
+.runneth{
+    display: none;
+    position: absolute;
+    font-family: fantasy;
+    color: white;
+    top: 57%;
+    font-size: 2vw;
+    text-align: center;
+    width: 80%;
+    margin: 0;
+    pointer-events: none;
+    background-color: transparent;
+    
+}
+
+/***** LOGO *****/
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 45vw;
+}
+
+#moons{
+    width: 80%;
+    padding: 30px;
+    display: block;
+}
+
+.logotype{
+    display: block;
+    width: 80%;
+    padding: 10px;
+}
+
+.logotype:hover{
+    cursor: pointer;
+}
+
+.logotype:hover .a{
+    fill: #fff;
+}
+
+#contact{
+    width: 80%;
+    height: auto;
+    max-height: 15%;
+    display: block;
+    outline: none;
+    padding: 10px;
+}
+
+#contact:active{
+    outline: none;
+}
+
+#contact:visited{
+    outline: none;
+}
+
+#contact-svg{
+    display: block;
+    max-width: 90%;
+    margin: auto;
+}
+
+#contact-svg:hover{
+    cursor: pointer;
+}
+
+#contact-svg:hover .a{
+    fill: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+MEDIA QUERIES
+   ========================================================================== */
+/*
+@media only screen and (max-width: 992px){
+
+    html, body, *{
+        background-color: blue;
+    }
+    
+    .dd{
+        width: 15vw;
+        height: 100%;
+    }
+    
+    .totem{
+        display: none;
+        width: 17.5vw;
+    }
+    
+    .logo{
+        width: 70vw;
+    }
+
+}
+*/
+@media only screen and (max-width: 992px) {  
+    .totem{
+        display: none;
+    }
+    
+    .dd{
+        width: 15vw;
+        height: 100%;
+    }
+    
+    .logo{
+        width: 70vw;
+    }
+    
+    #moons{
+        width: 100%;
+    }
+    
+    .logotype{
+        width: 100%;
+    }
+    
+    #contact{
+        width: 100%;
+    }
+    .marquee, .img-marquee{
+        height: 40px;
+    }
+    
+    #main-content{
+        height: calc(100% - 80px);
+    }
+}
